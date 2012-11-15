@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Kualia</string>
+    <string name="background">#fff</string>
+    <string name="TitleRefresh">Actualizar</string>
+    <string name="PunteI">N. Laredo Puente I </string>
+    <string name="PuenteII">N. Laredo Puente II</string>
+    <string name="MainMessage">Kualia is an android app that help people see the traffic of the international bridges of Juarez-Lincon and Puerta de las Americas Bridge</string>
+</resources>

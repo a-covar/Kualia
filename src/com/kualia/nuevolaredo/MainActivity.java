@@ -4,7 +4,6 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TabHost;
 
 public class MainActivity extends TabActivity {
@@ -43,7 +42,7 @@ public class MainActivity extends TabActivity {
 			tabHost.addTab(spec);
 			tabHost.setCurrentTab(2);
 		} catch (Exception e) {
-			Log.d("KUALIA", e.toString());
+		//	Log.d("KUALIA", e.toString());
 		}
 	}
 }

@@ -38,7 +38,8 @@ public final class R {
         public static final int menu=0x7f050000;
     }
     public static final class string {
-        public static final int MainMessage=0x7f040006;
+        public static final int ErrorMsgNetworkConn=0x7f040006;
+        public static final int MainMessage=0x7f040007;
         public static final int PuenteII=0x7f040005;
         public static final int PunteI=0x7f040004;
         public static final int TitleRefresh=0x7f040003;

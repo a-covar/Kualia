@@ -13,7 +13,6 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -42,13 +41,13 @@ public class BaseActivity extends Activity {
 		@Override
 		protected void onCancelled() {
 			super.onCancelled();
-			Log.w(TAG, "onCancelled AsyncTask");
+//			Log.w(TAG, "onCancelled AsyncTask");
 			conn.disconnect();
 		}
 
 		@Override
 		protected void onPostExecute(Bitmap result) {
-			Log.w(TAG, "onPostExecute");
+//			Log.w(TAG, "onPostExecute");
 			if (result != null) {
 				Display display = ((WindowManager) getSystemService(WINDOW_SERVICE))
 						.getDefaultDisplay();
@@ -67,21 +66,21 @@ public class BaseActivity extends Activity {
 
 		@Override
 		protected Bitmap doInBackground(String... params) {
-			Log.w(TAG, "doInBackground AsycTask");
+//			Log.w(TAG, "doInBackground AsycTask");
 
 			try {
 				myfileUrl = new URL(params[0]);
 			} catch (MalformedURLException e) {
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+//				e.printStackTrace();
+//				Log.e(TAG, e.getMessage());
 				return null;
 			} catch (Exception e) {
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+//				e.printStackTrace();
+//				Log.e(TAG, e.getMessage());
 				return null;
 			}
 			try {
-				Log.w(TAG, "try catch HttpURLConnection");
+//				Log.w(TAG, "try catch HttpURLConnection");
 				conn = (HttpURLConnection) myfileUrl.openConnection();
 				conn.setDoInput(true);
 				conn.setUseCaches(false);
@@ -95,14 +94,14 @@ public class BaseActivity extends Activity {
 			} catch (IOException e) {
 				Toast.makeText(BaseActivity.this, "Sorry there was en error ",
 						Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+//				e.printStackTrace();
+//				Log.e(TAG, e.getMessage());
 				return null;
 			} catch (Exception e) {
 				Toast.makeText(BaseActivity.this, "Sorry there was en error ",
 						Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+//				e.printStackTrace();
+//				Log.e(TAG, e.getMessage());
 				return null;
 			} /*
 			 * catch (NetworkOnMainThreadException e) { e.printStackTrace();

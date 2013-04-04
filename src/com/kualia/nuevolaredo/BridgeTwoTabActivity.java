@@ -3,7 +3,6 @@ package com.kualia.nuevolaredo;
 import java.util.Random;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +23,7 @@ public class BridgeTwoTabActivity extends BaseActivity {
 		} else {
 			Toast.makeText(
 					this,
-					"Network not available. Plase make sure to conect your equipment to the network",
+					R.string.ErrorMsgNetworkConn,
 					Toast.LENGTH_LONG).show();
 		}
 	}
@@ -41,10 +40,10 @@ public class BridgeTwoTabActivity extends BaseActivity {
 			} else {
 				Toast.makeText(
 						this,
-						"Network not available. Plase make sure to conect your equipment to the network",
+						R.string.ErrorMsgNetworkConn,
 						Toast.LENGTH_LONG).show();
 			}
-			Log.w(TAG, "item Refresh");
+			//Log.w(TAG, "item Refresh");
 			break;
 		}
 		return true;

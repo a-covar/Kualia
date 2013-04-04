@@ -15,7 +15,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -48,7 +47,7 @@ public class BridgeOneTabActivity extends Activity {
 		} else {
 			Toast.makeText(
 					this,
-					"Network not available. Plase make sure to conect your equipment to the network",
+					R.string.ErrorMsgNetworkConn,
 					Toast.LENGTH_LONG).show();
 		}
 
@@ -67,7 +66,7 @@ public class BridgeOneTabActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		// new GetBridgeImg().execute(url_Bridge2);
-		Log.w(TAG, "onResume");
+	//	Log.w(TAG, "onResume");
 	}
 
 	@Override
@@ -83,10 +82,10 @@ public class BridgeOneTabActivity extends Activity {
 			} else {
 				Toast.makeText(
 						this,
-						"Network not available. Plase make sure to conect your equipment to the network",
+						R.string.ErrorMsgNetworkConn,
 						Toast.LENGTH_LONG).show();
 			}
-			Log.w(TAG, "item Refresh");
+			//Log.w(TAG, "item Refresh");
 			break;
 		}
 		return true;
@@ -116,13 +115,13 @@ public class BridgeOneTabActivity extends Activity {
 		@Override
 		protected void onCancelled() {
 			super.onCancelled();
-			Log.w(TAG, "onCancelled AsyncTask");
+			//Log.w(TAG, "onCancelled AsyncTask");
 			conn.disconnect();
 		}
 
 		@Override
 		protected void onPostExecute(Bitmap result) {
-			Log.w(TAG, "onPostExecute");
+		//	Log.w(TAG, "onPostExecute");
 			if (result != null) {
 				Display display = ((WindowManager) getSystemService(WINDOW_SERVICE))
 						.getDefaultDisplay();
@@ -141,21 +140,21 @@ public class BridgeOneTabActivity extends Activity {
 
 		@Override
 		protected Bitmap doInBackground(String... params) {
-			Log.w(TAG, "doInBackground AsycTask");
+			//Log.w(TAG, "doInBackground AsycTask");
 
 			try {
 				myfileUrl = new URL(params[0]);
 			} catch (MalformedURLException e) {
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+				//e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 				return null;
 			} catch (Exception e) {
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+				//e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 				return null;
 			}
 			try {
-				Log.w(TAG, "try catch HttpURLConnection");
+				//Log.w(TAG, "try catch HttpURLConnection");
 				conn = (HttpURLConnection) myfileUrl.openConnection();
 				conn.setDoInput(true);
 				conn.setUseCaches(false);
@@ -166,16 +165,16 @@ public class BridgeOneTabActivity extends Activity {
 				conn.disconnect();
 				return bmImg;
 			} catch (IOException e) {
-				Toast.makeText(BridgeOneTabActivity.this,
-						"Sorry there was en error ", Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+			//	Toast.makeText(BridgeOneTabActivity.this,
+				//		"Sorry there was en error ", Toast.LENGTH_LONG).show();
+				//e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 				return null;
 			} catch (Exception e) {
-				Toast.makeText(BridgeOneTabActivity.this,
-						"Sorry there was en error ", Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-				Log.e(TAG, e.getMessage());
+			//	Toast.makeText(BridgeOneTabActivity.this,
+				//		"Sorry there was en error ", Toast.LENGTH_LONG).show();
+				//e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 				return null;
 			} /*
 			 * catch (NetworkOnMainThreadException e) { e.printStackTrace();

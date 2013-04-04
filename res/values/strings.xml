@@ -6,5 +6,6 @@
     <string name="TitleRefresh">Refresh</string>
     <string name="PunteI">Laredo Bridge I </string>
     <string name="PuenteII">Laredo Bridge II</string>
-    <string name="MainMessage">Kualia is an android app that help people see the traffic of the international bridges of Juarez-Lincon and Puerta de las Americas Bridge</string>
+    <string name="ErrorMsgNetworkConn">Network not available. Please connect your equipment to the network</string>
+    <string name="MainMessage">Kualia is an Android app that help people see the traffic of the international bridges of Juarez-Lincon and Puerta de las Americas Bridge</string>
 </resources>
